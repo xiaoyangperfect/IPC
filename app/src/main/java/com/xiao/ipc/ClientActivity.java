@@ -103,12 +103,12 @@ public class ClientActivity extends AppCompatActivity {
         public void handleMessage(Message msg) {
             switch (msg.what) {
                 case 2:
-                    mActivity.get().index = (int) msg.obj
+                    mActivity.get().index = (int) msg.obj;
                     Log.d("client", String.valueOf(mActivity.get().index));
                     break;
             }
         }
     }
 
-    Messenger messenger = new Messenger(new MyHandler());
+    Messenger messenger = new Messenger(new MyHandler(this));
 }
